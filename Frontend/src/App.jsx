@@ -24,10 +24,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/voice-assistant" element={<VoiceAssistant />} />
-            <Route path="/eligibility" element={<Eligibility />} />
+                <Route path="/eligibility/:schemeId" element={<Eligibility />} />
             <Route path="/steps" element={<StepGuide />} />
             <Route path="/summary" element={<Summary />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

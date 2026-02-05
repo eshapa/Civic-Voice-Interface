@@ -4,17 +4,18 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    host: true,
-    port: 8080,
-    hmr: {
-      overlay: false,
-    },
-  },
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "src"), // '@' points to src folder
+    },
+  },
+  server: {
+    host: true, // allows access from LAN/mobile devices
+    port: 8080, // default port
+    strictPort: false, // if 8080 is busy, Vite will try next available port
+    hmr: {
+      overlay: true, // show errors in overlay
     },
   },
 });
